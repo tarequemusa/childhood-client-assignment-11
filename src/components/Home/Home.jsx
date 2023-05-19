@@ -1,5 +1,7 @@
 
 import banner1 from '../../assets/banner/1.jpg'
+import Hero from '../Hero/Hero';
+import HomeTab from '../HomeTab/HomeTab';
 
 const Home = () => {
     return (
@@ -25,6 +27,9 @@ const Home = () => {
                 <a href="#item3" className="btn btn-xs">3</a>
                 <a href="#item4" className="btn btn-xs">4</a>
             </div>
+            <HomeTab></HomeTab>
+            <Hero></Hero>
+
         </div>
     );
 };
