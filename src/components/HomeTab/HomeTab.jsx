@@ -1,14 +1,47 @@
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
 
-const HomeTab = (componets) => {
+const HomeTab = () => {
     return (
-        <div>
+        <div className="container mx-auto my-16">
+            <h1 className="text-4xl my-8 font-bold border-b-4 py-5">Shop by category</h1>
             <Tabs forceRenderTabPanel defaultIndex={1}>
                 <TabList>
-                    <Tab>The Simpsons</Tab>
+                    <Tab><span className="font-bold">Disney Princess</span></Tab>
+                    <Tab><span className="font-bold">Disney Frozen</span></Tab>
                     <Tab>Futurama</Tab>
                 </TabList>
+                <TabPanel>
+                    <Tabs forceRenderTabPanel>
+                        <TabList>
+                            <Tab>Homer Simpson</Tab>
+                            <Tab>Marge Simpson</Tab>
+                            <Tab>Bart Simpson</Tab>
+                            <Tab>Lisa Simpson</Tab>
+                            <Tab>Maggie Simpson</Tab>
+                        </TabList>
+                        <TabPanel>
+                            <p>Husband of Marge; father of Bart, Lisa, and Maggie.</p>
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Homer_Simpson_2006.png/212px-Homer_Simpson_2006.png" alt="Homer Simpson" />
+                        </TabPanel>
+                        <TabPanel>
+                            <p>Wife of Homer; mother of Bart, Lisa, and Maggie.</p>
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/Marge_Simpson.png/220px-Marge_Simpson.png" alt="Marge Simpson" />
+                        </TabPanel>
+                        <TabPanel>
+                            <p>Oldest child and only son of Homer and Marge; brother of Lisa and Maggie.</p>
+                            <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png" alt="Bart Simpson" />
+                        </TabPanel>
+                        <TabPanel>
+                            <p>Middle child and eldest daughter of Homer and Marge; sister of Bart and Maggie.</p>
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Lisa_Simpson.png/200px-Lisa_Simpson.png" alt="Lisa Simpson" />
+                        </TabPanel>
+                        <TabPanel>
+                            <p>Youngest child and daughter of Homer and Marge; sister of Bart and Lisa.</p>
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Maggie_Simpson.png/223px-Maggie_Simpson.png" alt="Maggie Simpson" />
+                        </TabPanel>
+                    </Tabs>
+                </TabPanel>
                 <TabPanel>
                     <Tabs forceRenderTabPanel>
                         <TabList>
