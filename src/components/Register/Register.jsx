@@ -7,7 +7,7 @@ import {AuthContext} from "../../Providers/AuthProviders";
 
 const Register = () => {
     useTitle('Register');
-    const {createUser} = useContext(AuthContext);
+    const {user, createUser} = useContext(AuthContext);
     console.log(createUser);
 
     const [error, setError] = useState('');
@@ -59,9 +59,10 @@ const Register = () => {
     }
 
 
-    const updateUserData = (user, name) => {
+    const updateUserData = (user, name, photo) => {
         updateProfile(user, {
-            displayName: name
+            displayName: name,
+            photoURL: photo
         })
             .then(() => {
                 console.log('user name updated');

@@ -10,27 +10,28 @@ const auth = getAuth(app);
 const AuthProviders = ({children}) => {
     // const user = {displayName: 'Sagor'};
     const [user, setUser] = useState(null);
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
-        // setLoading(true);
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const signIn = (email, password) => {
-        // setLoading(true);
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const logOut = () => {
-        // setLoading(true);
+        setLoading(true);
         return signOut(auth);
     }
 
+    // Observe auth state change
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, signedUser => {
-            // console.log('Logged in User inside auth state observer', signedUser);
-            // setLoading(false);
+            console.log('Logged in User inside auth state observer', signedUser);
+            setLoading(false);
             setUser(signedUser);
         })
         return () => {
@@ -40,11 +41,10 @@ const AuthProviders = ({children}) => {
 
     const authInfo = {
         user,
-        // loading,
+        loading,
         createUser,
         signIn,
         logOut
-
     }
 
 

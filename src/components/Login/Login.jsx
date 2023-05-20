@@ -59,16 +59,16 @@ const Login = () => {
             })
     }
 
-    // const handleSignOut = () => {
-    //     signOut(auth)
-    //         .then(result => {
-    //             console.log(result);
-    //             setUser(null);
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         })
-    // }
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(result => {
+                console.log(result);
+                setUser(null);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     const handleResetPassword = event => {
         const email = emailRef.current.value;

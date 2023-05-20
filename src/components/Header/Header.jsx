@@ -1,16 +1,17 @@
 import {Link} from 'react-router-dom';
 import logo from '../../assets/Logo/Childhood.png'
-// import {useContext} from 'react';
+import {useContext} from 'react';
+import {AuthContext} from '../../Providers/AuthProviders';
 
 const Header = () => {
-    // const {user, logOut} = useContext();
+    const {user, logOut} = useContext(AuthContext);
 
-    // const handleLogOut = (event) => {
-    //     event.preventDefault();
-    //     logOut()
-    //         .then()
-    //         .catch(error => console.log(error))
-    // }
+    const handleLogOut = (event) => {
+        event.preventDefault();
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
     const navItems =
         <>
             <li className='text-white'><Link to="/">Home</Link></li>
@@ -38,18 +39,15 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className="navbar-end flex items-center gap-2">
-                        {/* {
+                        {
                             user &&
-                            <div className='text-center px-3 py-0'><img className='rounded-full' src={user.photoURL} alt="" /></div>
+                            <div className='text-center px-3 py-0'><img className='rounded-full w-3/5' title={user.displayName} src={user.photoURL} alt="" /></div>
                         }
-                        {user ?
-                            <>
-                                <button className='text-white'><Link>My Toys</Link></button>
-                                <button className='text-white'><Link>Add A Toy</Link></button>
-                                <button onClick={handleLogOut} className="rounded px-3 py-0" style={{textDecoration: 'none'}} >Logout</button>
-                            </> :
-                            <button className="rounded px-3"><Link className="text-dark" to="/login">Login</Link></button>
-                        } */}
+                        {
+                            user ? <>
+                                <span>{user.email}</span> <Link to='/'><button onClick={handleLogOut} className='btn btn-sm'> Log Out</button></Link> </> : <button className='px-2 btn btn-sm'><Link to='/login'>Login</Link></button>
+
+                        }
                     </div>
                 </div>
             </div>
