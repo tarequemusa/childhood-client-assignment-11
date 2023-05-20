@@ -1,11 +1,15 @@
+import {useContext} from 'react';
 import useTitle from '../../Hooks/useTitle';
 import Hero from '../Hero/Hero';
 import HomeTab from '../HomeTab/HomeTab';
+import {AuthContext} from '../../Providers/AuthProviders';
 
 const Home = () => {
-    useTitle('Home')
+    useTitle('Home');
+    const user = useContext(AuthContext)
     return (
         <div>
+            <h2>{user && <span>{user.displayName}</span>}</h2>
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://i.ibb.co/jTyh74b/4.png" className="w-full" />
