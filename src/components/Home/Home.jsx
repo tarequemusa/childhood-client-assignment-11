@@ -1,7 +1,9 @@
+import useTitle from '../../Hooks/useTitle';
 import Hero from '../Hero/Hero';
 import HomeTab from '../HomeTab/HomeTab';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <div className="carousel w-full">

@@ -1,6 +1,8 @@
+import useTitle from "../../Hooks/useTitle";
 
 
 const Blogs = () => {
+    useTitle('Blogs')
     return (
         <div className="container mx-auto w-3/4 justify-center my-12">
             <div className="collapse collapse-plus my-2">

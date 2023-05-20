@@ -1,7 +1,9 @@
 import {Link, useRouteError} from 'react-router-dom'
+import useTitle from '../../Hooks/useTitle';
 
 const Error = () => {
-    const {error, status} = useRouteError()
+    const {error, status} = useRouteError();
+    useTitle('404')
     return (
         <>
             <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>

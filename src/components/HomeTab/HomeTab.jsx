@@ -9,7 +9,7 @@ const HomeTab = () => {
                 <TabList>
                     <Tab><span className="font-bold">Disney Princess</span></Tab>
                     <Tab><span className="font-bold">Disney Frozen</span></Tab>
-                    <Tab>Futurama</Tab>
+                    <Tab><span className="font-bold">Disney The Little Mermaid</span></Tab>
                 </TabList>
                 <TabPanel>
                     <Tabs forceRenderTabPanel>
