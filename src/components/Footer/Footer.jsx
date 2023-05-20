@@ -33,7 +33,7 @@ const Footer = () => {
                 </div>
             </footer>
             <div className="bg-slate-400">
-                <footer className="footer items-center p-4 text-neutral-content container mx-auto">
+                <footer className="footer p-10 items-center text-neutral-content container mx-auto">
                     <div className="items-center grid-flow-col">
                         <p>Copyright © 2023 - All right reserved</p>
                     </div>

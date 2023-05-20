@@ -3,7 +3,7 @@ import 'react-tabs/style/react-tabs.css';
 
 const HomeTab = () => {
     return (
-        <div className="container mx-auto my-16">
+        <div className="container px-12 mx-auto my-16">
             <h1 className="text-4xl my-8 font-bold border-b-4 py-5">Shop by category</h1>
             <Tabs forceRenderTabPanel defaultIndex={1}>
                 <TabList>
