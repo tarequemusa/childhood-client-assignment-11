@@ -33,7 +33,8 @@ const HomeTab = () => {
     };
 
     return (
-        <div className="container px-12 mx-auto my-16">
+        <div className="container px-12 mx-auto my-16" data-aos="fade-up"
+            data-aos-duration="3000">
             <h1 className="text-4xl my-8 font-bold border-b-4 py-5 text-pink-700">Shop by category</h1>
             <Tabs forceRenderTabPanel defaultIndex={0} onSelect={(index) => handleTabClick(index)} >
                 <TabList>
