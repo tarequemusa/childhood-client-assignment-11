@@ -1,9 +1,10 @@
+import {Link} from "react-router-dom";
 
 
 const Toy = ({toy}) => {
-
+    const {_id} = toy;
     const {
-        title, image, price, rating
+        title, image, price, rating,
     } = toy || {};
 
 
@@ -19,7 +20,7 @@ const Toy = ({toy}) => {
                     <div className="font-bold outline px-2 rounded mx-2 flex items-center">Rating: <span className="text-3xl font-bold text-red-600">{rating}</span></div>
                 </div>
                 <div className="card-actions">
-                    <button className="btn btn-primary">View Details</button>
+                    <Link to={`/login/${ _id }`}><button className="btn btn-primary">View Details</button></Link>
                 </div>
             </div>
         </div>

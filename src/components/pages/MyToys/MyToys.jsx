@@ -7,6 +7,7 @@ import MyToyTable from "./MyToyTable";
 const MyToys = () => {
     useTitle('My Toys');
     const {user} = useContext(AuthContext);
+    const [control, setControl] = useState(false);
     console.log(user);
     const [toys, setToys] = useState([]);
 
@@ -17,7 +18,9 @@ const MyToys = () => {
                 setToys(data)
                 console.log(data);
             });
-    }, [user]);
+    }, [user, control]);
+
+
 
     return (
         <div className="overflow-x-auto w-11/12 container mx-auto">
