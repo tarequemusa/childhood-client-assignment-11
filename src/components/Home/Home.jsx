@@ -11,7 +11,8 @@ const Home = () => {
     return (
         <div>
             <h2>{user && <span>{user.displayName}</span>}</h2>
-            <div className="carousel w-full">
+            <div className="carousel w-full" data-aos="fade-left"
+                data-aos-duration="3000">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://i.ibb.co/jTyh74b/4.png" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
