@@ -8,7 +8,7 @@ const Toy = ({toy}) => {
 
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl my-5">
+        <div className="card w-full bg-base-100 shadow-xl my-5">
             <figure className="px-10 pt-10">
                 <img src={image} alt="Dolls" className="rounded-xl p-2 border-4" />
             </figure>
