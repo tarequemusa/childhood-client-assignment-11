@@ -3,22 +3,20 @@ import useTitle from "../../Hooks/useTitle";
 import {FaGoogle} from 'react-icons/fa';
 import {GoogleAuthProvider, getAuth, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut} from 'firebase/auth';
 import app from '../../firebase/firebase.config';
-import {useContext, useRef, useState} from "react";
-import {AuthContext} from "../../Providers/AuthProviders";
+import {useRef, useState} from "react";
 
 
 const Login = () => {
-    const [user, setUser] = useState(null);
     const auth = getAuth(app);
     useTitle('Login');
     const googleProvider = new GoogleAuthProvider();
 
-    const {signIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log('Login Page Location', location);
     const from = location.state?.from?.pathname || '/';
 
+    const [user, setUser] = useState(null);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const emailRef = useRef();
@@ -39,7 +37,7 @@ const Login = () => {
                 setSuccess('User Login Successful');
                 setError('');
                 console.log(loggedUser);
-                Navigate(from, {replace: true});
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 setError(error.message);
@@ -56,17 +54,6 @@ const Login = () => {
             })
             .catch(error => {
                 console.log("error", error.message);
-            })
-    }
-
-    const handleSignOut = () => {
-        signOut(auth)
-            .then(result => {
-                console.log(result);
-                setUser(null);
-            })
-            .catch(error => {
-                console.log(error);
             })
     }
 
@@ -122,8 +109,8 @@ const Login = () => {
                         </div>
                     </div>
                     <p className="text-center text-2xl"><small>New to Childhood? Please <Link to="/register"><span className="text-pink-700 font-bold py-20">Register !</span></Link> </small></p>
-                    <p className="text-danger">{error}</p>
-                    <p className="text-success">{success}</p>
+                    <p className="text-red-700">{error}</p>
+                    <p className="text-green-700">{success}</p>
                 </div>
             </div>
             {user && <div>

@@ -15,7 +15,9 @@ const Header = () => {
     const navItems =
         <>
             <li className='text-white'><Link to="/">Home</Link></li>
-            <li className='text-white'><Link>All Toys</Link></li>
+            <li className='text-white'><Link to="/alltoys">All Toys</Link></li>
+            {user && <li className='text-white'><Link to="/mytoys">My Toys</Link></li>}
+            {user && <li className='text-white'><Link to="/addtoy">Add A Toy</Link></li>}
             <li className='text-white'><Link to="/blogs">Blogs</Link></li>
         </>
     return (
@@ -38,7 +40,7 @@ const Header = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <div className="navbar-end flex items-center gap-2">
+                    <div className="navbar-end grid sm:grid-flow-col md:grid-flow-col items-center gap-2">
                         {
                             user &&
                             <div className='text-center px-3 py-0'><img className='rounded-full w-3/5' title={user.displayName} src={user.photoURL} alt="" /></div>

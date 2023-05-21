@@ -2,7 +2,6 @@ import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithE
 import {createContext, useEffect, useState} from "react";
 import app from "../firebase/firebase.config";
 
-
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
@@ -31,8 +30,8 @@ const AuthProviders = ({children}) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, signedUser => {
             console.log('Logged in User inside auth state observer', signedUser);
-            setLoading(false);
             setUser(signedUser);
+            setLoading(false);
         })
         return () => {
             return unsubscribe();

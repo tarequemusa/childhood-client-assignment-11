@@ -59,10 +59,9 @@ const Register = () => {
     }
 
 
-    const updateUserData = (user, name, photo) => {
+    const updateUserData = (user, name) => {
         updateProfile(user, {
-            displayName: name,
-            photoURL: photo
+            displayName: name
         })
             .then(() => {
                 console.log('user name updated');
