@@ -3,6 +3,7 @@ import useTitle from '../../Hooks/useTitle';
 import Hero from '../Hero/Hero';
 import HomeTab from '../HomeTab/HomeTab';
 import {AuthContext} from '../../Providers/AuthProviders';
+import Gallery from '../Gallery/Gallery';
 
 const Home = () => {
     useTitle('Home');
@@ -42,6 +43,7 @@ const Home = () => {
             </div>
             <HomeTab></HomeTab>
             <Hero></Hero>
+            <Gallery></Gallery>
         </div>
     );
 };
