@@ -11,7 +11,7 @@ const Gallery = () => {
             <div className="flex justify-center p-16" data-aos="flip-left"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000">
-                <div className="grid grid-cols-3 gap-3 my-5" data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
+                <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-3 my-5" data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
                     <div className="card bg-base-100 shadow-xl rounded-full w-80 ">
                         <figure><img src="https://i.ibb.co/wdmFmKk/1.png" alt="Shoes" /></figure>
                     </div>
