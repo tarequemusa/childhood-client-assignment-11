@@ -32,7 +32,7 @@ const AllToys = () => {
 
     return (
         <div className="overflow-x-auto w-10/12 container mx-auto">
-            <h2 className='text-4xl font-bold border-b-4 text-center my-12'><span className='rounded-full outline p-4 bg-pink-700 text-white'>All Toys</span></h2>
+            <h2 className='text-2xl font-bold border-b-4 text-center my-12'><span className='rounded-full outline p-4 bg-pink-700 text-white'>All Toys</span></h2>
             <div className="search-box p-2 text-center mb-6">
                 <input
                     onChange={(e) => setSearchText(e.target.value)}

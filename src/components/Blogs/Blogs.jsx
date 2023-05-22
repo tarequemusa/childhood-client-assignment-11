@@ -6,7 +6,7 @@ const Blogs = () => {
     return (
         <div className="container mx-auto w-3/4 justify-center my-12">
             <div>
-                <h2 className='text-4xl font-bold border-b-4 text-center my-12'><span className='rounded-full outline p-4 bg-pink-700 text-white'>Blog Section</span></h2>
+                <h2 className='text-2xl font-bold border-b-4 text-center my-12'><span className='rounded-full outline p-4 bg-pink-700 text-white'>Blog Section</span></h2>
             </div>
             <div className="collapse collapse-plus my-2">
                 <input type="checkbox" className="peer" />

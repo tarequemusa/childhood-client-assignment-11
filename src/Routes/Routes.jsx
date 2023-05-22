@@ -11,6 +11,7 @@ import MyToys from "../components/pages/MyToys/MyToys";
 import PrivateRoutes from "./PrivateRoutes";
 import AllToys from "../components/pages/AllToys/AllToys";
 import MyToysDetails from "../components/pages/MyToys/MyToysDetails";
+import MyToyTable from "../components/pages/MyToys/MyToyTable";
 
 
 

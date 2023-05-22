@@ -24,7 +24,7 @@ const MyToys = () => {
 
     return (
         <div className="overflow-x-auto w-11/12 container mx-auto">
-            <h2 className='text-4xl font-bold border-b-4 text-center my-12'><span className='rounded-full outline p-4 bg-pink-700 text-white'>My Toys</span></h2>
+            <h2 className='text-2xl font-bold border-b-4 text-center my-12'><span className='rounded-full outline p-4 bg-pink-700 text-white'>My Toys</span></h2>
 
             <table className="table table-compact w-full text-center">
                 <thead>
