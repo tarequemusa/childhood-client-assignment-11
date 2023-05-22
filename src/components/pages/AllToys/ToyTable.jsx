@@ -9,6 +9,7 @@ const ToyTable = ({toy}) => {
 
     return (
         <tr className='text-center text-sm'>
+            <td></td>
             <td>{toy.sellerName}</td>
             <td>{toy.title}</td>
             <td>{toy.category}</td>

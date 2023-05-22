@@ -15,7 +15,6 @@ const Register = () => {
 
     const handleRegister = event => {
         event.preventDefault();
-
         setSuccess('');
         setError('');
         const form = event.target;
@@ -25,19 +24,19 @@ const Register = () => {
         const photo = event.target.photo.value;
         console.log(name, email, password, photo);
         event.target.reset();
-        // // Password Validate:
-        // if(!/(?=.*[A-Z])/.test(password)) {
-        //     setError('Please add atleast one uppercase');
-        //     return;
-        // }
-        // else if(!/(?=.*[0-9].*[0-9])/.test(password)) {
-        //     setError('Please add atleast two numbers');
-        //     return;
-        // }
-        // else if(password.length < 6) {
-        //     setError('Please add atleast 6 characters in your password');
-        //     return;
-        // }
+        // Password Validate:
+        if(!/(?=.*[A-Z])/.test(password)) {
+            setError('Please add atleast one uppercase');
+            return;
+        }
+        else if(!/(?=.*[0-9].*[0-9])/.test(password)) {
+            setError('Please add atleast two numbers');
+            return;
+        }
+        else if(password.length < 6) {
+            setError('Please add atleast 6 characters in your password');
+            return;
+        }
 
         // Create user in Firebase
         createUser(email, password)

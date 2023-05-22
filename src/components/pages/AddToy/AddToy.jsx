@@ -1,7 +1,7 @@
 import useTitle from "../../../Hooks/useTitle";
 import {useForm} from "react-hook-form";
 import "./AddToy.css";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {AuthContext} from "../../../Providers/AuthProviders";
 
 
@@ -9,17 +9,16 @@ import {AuthContext} from "../../../Providers/AuthProviders";
 const AddToy = () => {
     useTitle('Add A Toy');
     const {user} = useContext(AuthContext);
-    const [selectedOption, setSelectedOption] = useState(null);
+    // const [selectedOption, setSelectedOption] = useState(null);
 
     const {
         register,
         handleSubmit,
-        watch,
         formState: {errors},
     } = useForm();
 
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/addToy", {
+        fetch("https://childhood-server-assignment-11.vercel.app/addToy", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +46,7 @@ const AddToy = () => {
                             <div className="flex justify-center">
                                 <input
                                     className="text-input outline rounded"
-                                    {...register("title")}
+                                    {...register("title", {required: true})}
                                     placeholder="Dolls Name"
                                 />
                                 <input

@@ -11,7 +11,7 @@ const MyToyTable = ({toy}) => {
 
     const handleToyUpdate = (data) => {
         console.log(data);
-        fetch(`http://localhost:5000/updateToy/${ data?._id }`, {
+        fetch(`https://childhood-server-assignment-11.vercel.app/updateToy/${ data?._id }`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data),
@@ -27,7 +27,7 @@ const MyToyTable = ({toy}) => {
 
     const handleDelete = _id => {
         console.log('Delete', _id);
-        fetch(`http://localhost:5000/singleToy/${ _id }`, {
+        fetch(`https://childhood-server-assignment-11.vercel.app/singleToy/${ _id }`, {
             method: 'DELETE'
         })
             .then(res => res.json())

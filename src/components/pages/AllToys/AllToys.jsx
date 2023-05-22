@@ -13,7 +13,7 @@ const AllToys = () => {
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:5000/alltoys")
+        fetch("https://childhood-server-assignment-11.vercel.app/alltoys")
             .then(res => res.json())
             .then(data => {
                 setToys(data)
@@ -22,7 +22,7 @@ const AllToys = () => {
     }, []);
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/getToysByText/${ searchText }`)
+        fetch(`https://childhood-server-assignment-11.vercel.app/getToysByText/${ searchText }`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -44,6 +44,7 @@ const AllToys = () => {
             <table className="table table-compact w-full">
                 <thead>
                     <tr className='text-center'>
+                        <th>#</th>
                         <th>Seller</th>
                         <th>Toy Name</th>
                         <th>Sub-category</th>
