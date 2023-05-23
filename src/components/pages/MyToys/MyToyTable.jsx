@@ -1,5 +1,7 @@
 import {useState} from "react";
 import UpdateModal from "./UpdateModal";
+import {Link} from "react-router-dom";
+import UpdateToy from "./updateToy";
 // import {useLoaderData} from "react-router-dom";
 
 
@@ -62,12 +64,14 @@ const MyToyTable = ({toy, toys, setToys}) => {
                 <td>{toy.rating}</td>
                 <td>{toy.quantity}</td>
                 <td>{toy.description}</td>
-                <td><button ><label htmlFor="my-modal-3" className="btn btn-primary">Update</label></button></td>
-                <td><button className="btn btn-primary"
+                <td><Link to={`/updateToy/${ toy._id }`}><button ><label className="btn btn-primary">Update</label></button></Link></td>
+                {/* <td><button ><label htmlFor="my-modal-3" className="btn btn-primary">Update</label></button></td> */}
+                <td><button className="btn btn-warning text-3xl text-red-600 font-bold"
                     onClick={() => handleDelete(toy._id)}
-                >Delete</button></td>
+                >X</button></td>
             </tr>
-            <UpdateModal toy={toy} handleToyUpdate={handleToyUpdate}></UpdateModal>
+            {/* <UpdateToy toy={toy} handleToyUpdate={handleToyUpdate}></UpdateToy>
+            <UpdateModal toy={toy} handleToyUpdate={handleToyUpdate}></UpdateModal> */}
         </>
     );
 };

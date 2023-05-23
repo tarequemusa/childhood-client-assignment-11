@@ -12,6 +12,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import AllToys from "../components/pages/AllToys/AllToys";
 import MyToysDetails from "../components/pages/MyToys/MyToysDetails";
 import MyToyTable from "../components/pages/MyToys/MyToyTable";
+import UpdateToy from "../components/pages/MyToys/updateToy";
 
 
 
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
             {
                 path: '/addtoy',
                 element: <PrivateRoutes><AddToy></AddToy></PrivateRoutes>
+            },
+            {
+                path: '/updateToy/:id',
+                element: <PrivateRoutes><UpdateToy></UpdateToy></PrivateRoutes>,
+                loader: ({params}) => fetch(`https://childhood-server-assignment-11.vercel.app/updateToy/${ params.id }`)
             },
             {
                 path: '/mytoys',
