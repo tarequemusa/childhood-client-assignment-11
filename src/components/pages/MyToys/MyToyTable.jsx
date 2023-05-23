@@ -7,11 +7,11 @@ const MyToyTable = ({toy}) => {
     console.log(toy);
     const [control, setControl] = useState(false);
     // const loadedUsers = useLoaderData();
-    const [singleToy, setsingleToy] = useState();
+    const [singleToy, setSingleToy] = useState();
 
     const handleToyUpdate = (data) => {
         console.log(data);
-        fetch(`https://childhood-server-assignment-11.vercel.app/updateToy/${ data?._id }`, {
+        fetch(`http://localhost:5000/updateToy/${ data?._id }`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data),
@@ -27,7 +27,7 @@ const MyToyTable = ({toy}) => {
 
     const handleDelete = _id => {
         console.log('Delete', _id);
-        fetch(`https://childhood-server-assignment-11.vercel.app/singleToy/${ _id }`, {
+        fetch(`http://localhost:5000/singleToy/${ _id }`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -36,7 +36,7 @@ const MyToyTable = ({toy}) => {
                 if(data.deletedCount > 0) {
                     alert('Toy Deleted Successfully');
                     const remaining = singleToy.filter(toy => toy._id !== _id);
-                    setsingleToy(remaining);
+                    setSingleToy(remaining);
                 }
             })
     }

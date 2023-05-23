@@ -13,7 +13,7 @@ const AllToys = () => {
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        fetch("https://childhood-server-assignment-11.vercel.app/alltoys")
+        fetch("http://localhost:5000/alltoys")
             .then(res => res.json())
             .then(data => {
                 setToys(data)
@@ -22,7 +22,7 @@ const AllToys = () => {
     }, []);
 
     const handleSearch = () => {
-        fetch(`https://childhood-server-assignment-11.vercel.app/getToysByText/${ searchText }`)
+        fetch(`http://localhost:5000/getToysByText/${ searchText }`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -40,6 +40,11 @@ const AllToys = () => {
                     className="p-3 border-4 rounded-xl"
                 />{" "}
                 <button onClick={handleSearch} className='btn btn-primary'>Search</button>
+            </div>
+            <div className="flex justify-end rounded items center mb-4 gap-4">
+                <div><button className="btn btn-success btn-sm ">Next</button></div>
+                <div><button className="btn btn-success btn-sm">Previous</button></div>
+                <div><button className="btn btn-success btn-sm">Show All</button></div>
             </div>
             <table className="table table-compact w-full">
                 <thead>

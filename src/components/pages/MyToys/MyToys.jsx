@@ -12,7 +12,7 @@ const MyToys = () => {
     const [toys, setToys] = useState([]);
 
     useEffect(() => {
-        fetch(`https://childhood-server-assignment-11.vercel.app/myToys/${ user?.email }`)
+        fetch(`http://localhost:5000/myToys/${ user?.email }`)
             .then(res => res.json())
             .then(data => {
                 setToys(data)
@@ -25,6 +25,10 @@ const MyToys = () => {
     return (
         <div className="overflow-x-auto w-11/12 container mx-auto">
             <h2 className='text-2xl font-bold border-b-4 text-center my-12'><span className='rounded-full outline p-4 bg-pink-700 text-white'>My Toys</span></h2>
+            <div className="flex justify-end rounded items center mb-4 gap-4">
+                <div><button className="btn btn-primary btn-sm ">Ascending</button></div>
+                <div><button className="btn btn-primary btn-sm">Descending</button></div>
+            </div>
 
             <table className="table table-compact w-full text-center">
                 <thead>
