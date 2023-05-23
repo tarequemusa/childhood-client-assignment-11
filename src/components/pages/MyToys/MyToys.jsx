@@ -12,7 +12,7 @@ const MyToys = () => {
     const [toys, setToys] = useState([]);
 
     useEffect(() => {
-        fetch(`https://childhood-server-assignment-11.vercel.app/myToys/${ user?.email }`)
+        fetch(`http://localhost:5000/myToys/${ user?.email }`)
             .then(res => res.json())
             .then(data => {
                 setToys(data)
@@ -47,7 +47,7 @@ const MyToys = () => {
                 </thead>
                 <tbody>
                     {/* row 1 */}
-                    {toys.map(toy => <MyToyTable toy={toy} key={toy._id}></MyToyTable>)}
+                    {toys.map(toy => <MyToyTable setToys={setToys} toys={toys} toy={toy} key={toy._id}></MyToyTable>)}
                     {/*  */}
                 </tbody>
             </table>

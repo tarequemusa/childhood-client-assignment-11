@@ -3,7 +3,7 @@ import UpdateModal from "./UpdateModal";
 // import {useLoaderData} from "react-router-dom";
 
 
-const MyToyTable = ({toy}) => {
+const MyToyTable = ({toy, toys, setToys}) => {
     console.log(toy);
     const [control, setControl] = useState(false);
     // const loadedUsers = useLoaderData();
@@ -11,7 +11,7 @@ const MyToyTable = ({toy}) => {
 
     const handleToyUpdate = (data) => {
         console.log(data);
-        fetch(`https://childhood-server-assignment-11.vercel.app/updateToy/${ data?._id }`, {
+        fetch(`http://localhost:5000/updateToy/${ data?._id }`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data),
@@ -27,7 +27,7 @@ const MyToyTable = ({toy}) => {
 
     const handleDelete = _id => {
         console.log('Delete', _id);
-        fetch(`https://childhood-server-assignment-11.vercel.app/singleToy/${ _id }`, {
+        fetch(`http://localhost:5000/singleToy/${ _id }`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -35,8 +35,8 @@ const MyToyTable = ({toy}) => {
                 console.log(data);
                 if(data.deletedCount > 0) {
                     alert('Toy Deleted Successfully');
-                    const remaining = singleToy.filter(toy => toy._id !== _id);
-                    setSingleToy(remaining);
+                    const remaining = toys.filter(toy => toy._id !== _id);
+                    setToys(remaining);
                 }
             })
     }

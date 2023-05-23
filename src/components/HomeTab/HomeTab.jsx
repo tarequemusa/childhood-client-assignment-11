@@ -10,7 +10,7 @@ const HomeTab = () => {
 
 
     useEffect(() => {
-        fetch(`https://childhood-server-assignment-11.vercel.app/alltoys/${ activeTab }`)
+        fetch(`http://localhost:5000/alltoys/${ activeTab }`)
             .then((res) => res.json())
             .then((result) => {
                 setToys(result);
